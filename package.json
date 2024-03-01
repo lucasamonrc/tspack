@@ -1,0 +1,29 @@
+{
+  "name": "tspack",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "./dist/tspack.umd.cjs",
+  "module": "./dist/tspack.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/tspack.js",
+      "require": "./dist/tspack.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "vitest",
+    "build": "tsc && vite build",
+    "publish": "npm run build && cp dist/tspack.js destination/"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4",
+    "vite-plugin-dts": "^3.7.3",
+    "vitest": "^1.3.1"
+  }
+}
